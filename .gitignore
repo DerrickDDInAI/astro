@@ -7,6 +7,11 @@
 # MacOS
 .DS_Store
 
+# Data folder (too big)
+core/assets/data/
+
+# Download script files
+*.sh
 
 
 
