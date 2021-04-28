@@ -101,13 +101,12 @@ astro
 │
 └───core                    :directory contains all the core scripts of the program
 │   │   __init__.py
-│   │   tutorials.ipynb     :jupyter nb on tutorials I follows
-│   │   exploration.ipynb   :jupyter nb on my exploration of the data
 │   │
 │   └───assets              :contains the datasets, images and ML models
 │       ├───data
 │       ├───images
 │       └───models
+│   └───tutorials           :contains the tutorials I follow (mainly from lightkurve)
 ```
 
 ### Roadmap
