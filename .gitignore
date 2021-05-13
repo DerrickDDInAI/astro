@@ -13,7 +13,11 @@ core/assets/data/
 # Download script files
 *.sh
 
+# Images
+*.fits.gz
 
+# Image folders
+core/tutorials/mastDownload
 
 
 

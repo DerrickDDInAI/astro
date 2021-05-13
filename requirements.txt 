@@ -1,6 +1,7 @@
-numpy
 pandas
+numpy
 matplotlib
 scikit-learn
 jupyter
 lightkurve
+exodata
