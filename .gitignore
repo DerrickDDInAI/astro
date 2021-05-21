@@ -19,5 +19,8 @@ core/assets/data/
 # Image folders
 core/tutorials/mastDownload
 
+# External folder
+core/external
 
-
+# pycache folder
+core/__pycache__

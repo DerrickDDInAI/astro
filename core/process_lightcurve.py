@@ -104,7 +104,8 @@ def read_lightcurve(filepath, tce_table) -> pd.DataFrame:
     processed_lc, best_fit_period = pipeline_lightcurve(lc)
 
     # Convert into DataFrame
-    lc_df = processed_lc.to_pandas()[["flux"]]
+    lc_df = processed_lc.to_pandas().reset_index()
+    lc_df = lc_df[["time", "flux"]]
 
     # remove any missing values that would remain (normally removed during preprocessing)
     lc_df.dropna(inplace=True)

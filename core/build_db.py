@@ -55,7 +55,7 @@ class SyncThread(Thread):
         print(f"Starting thread")
         
         # create empty DataFrame
-        df_thread = pd.DataFrame(columns=['flux', 'kepid', 'best_fit_period', 'av_training_set'])
+        df_thread = pd.DataFrame(columns=['time', 'flux', 'kepid', 'best_fit_period', 'av_training_set'])
 
         # for filepath in list of light curves for the thread instance
         for filepath in self.lc_list:
@@ -102,7 +102,7 @@ if file_exists:
     Do you still want to run it? (yes/no): 
     """).lower()
     if delete_or_not in ("yes", "y"):
-        os.remove(os.path.join("assets", "data", "thread_csv_all.csv"))
+        os.remove(os.path.join("assets", "data", "Kepler", "thread_csv_all.csv"))
     else:
         run_script = False
 
@@ -113,7 +113,7 @@ if run_script:
     kepler_tce = pd.read_csv(csv_path, comment="#")
 
     # create empty lists
-    lc_list = []
+    file_list = []
     threads = []
 
     # get all light curve file paths in downloaded_lc folder
@@ -122,10 +122,11 @@ if run_script:
     for path, dirs, files in os.walk(folder_path):
         for filename in files:
             filepath = os.path.join(path, filename)
-            lc_list.append(filepath)
+            file_list.append(filepath)
 
     # slice light curves files list in 5 sets (1 for each thread)
-    splitted_list = np.array_split(lc_list, 5)
+    # splitted_list = np.array_split(file_list, 5)
+    splitted_list = np.array_split(file_list[:10], 5)
 
     # create thread for each set
     for array in splitted_list:
