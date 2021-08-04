@@ -66,9 +66,10 @@ class SyncThread(Thread):
             # append DataFrame to `df`DataFrame
             df_thread = df_thread.append(lc_df)
 
-        # compute thread runtime
+        # compute thread runtime in minutes
         end_time = time.time()
-        print(end_time - start_time)
+        runtime_min = (end_time - start_time)/60
+        print(f"{runtime_min:.2f}")
 
         # Export dataframe to csv
         with writing_csv_lock:
@@ -126,7 +127,7 @@ if run_script:
 
     # slice light curves files list in 5 sets (1 for each thread)
     # splitted_list = np.array_split(file_list, 5)
-    splitted_list = np.array_split(file_list[:10], 5)
+    splitted_list = np.array_split(file_list[:1000], 8)
 
     # create thread for each set
     for array in splitted_list:

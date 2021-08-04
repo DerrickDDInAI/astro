@@ -33,10 +33,10 @@ def download_lightcurve(target_name: str) -> lk.lightcurve.TessLightCurve:
     search_result = lk.search_lightcurve(target_name)
 
     try:
-        # get max Exposure time
+        # get max cadence
         exptime_max = np.max(search_result.exptime)
 
-        # get data products with biggest exposure time
+        # get data products with biggest cadence
         exptime_max_result = search_result[search_result.exptime == exptime_max]
 
         # get index of most recent observation

@@ -141,3 +141,4 @@ I would like to thank:
 
 ## Next steps
 - Progress in roadmap
+- Explore this idea: save lightcurves as images, build & train CNN model to classify as planet candidate, no planet, binary stars, ...
